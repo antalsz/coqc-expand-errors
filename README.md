@@ -1,0 +1,1 @@
+# coqc-expand-errors

@@ -1,0 +1,49 @@
+name:                coqc-expand-errors
+version:             0.0
+synopsis:            Run `coqc` and print out colorized Coq error location information
+homepage:            https://www.github.com/antalsz/coq-expand-errors#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Antal Spector-Zabusky
+maintainer:          Antal Spector-Zabusky <antal.b.sz@gmail.com>
+copyright:           Copyright © 2018 Antal Spector-Zabusky
+category:            Development
+build-type:          Simple
+extra-source-files:  CHANGELOG.md, README.md
+cabal-version:       >=1.10
+
+
+source-repository head
+  type:     git
+  location: https://github.com/antalsz/hs-to-coq
+
+library
+  exposed-modules:     CoqcExpandErrors
+
+  other-extensions:    TemplateHaskell
+                     , TypeFamilies, FlexibleContexts
+                     , GeneralizedNewtypeDeriving, DeriveFunctor
+                     , TypeApplications, OverloadedStrings
+                     , LambdaCase, MultiWayIf, RecordWildCards
+
+  build-depends:       base       ==4.11.*
+                     , lens       ==4.16.*
+                     , mtl        ==2.2.*
+                     , containers ==0.5.*
+                     , vector     ==0.12.*
+                     , text       ==1.2.*
+                     , megaparsec ==7.0.*
+                     , pipes      ==4.3.*
+                     , pipes-text ==0.0.*
+                     , process    ==1.6.*
+
+  hs-source-dirs:      src/lib
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fno-warn-name-shadowing
+
+executable coqc-expand-errors
+  main-is:             Main.hs
+  build-depends:       base, coqc-expand-errors
+  hs-source-dirs:      src/exe
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fno-warn-name-shadowing
