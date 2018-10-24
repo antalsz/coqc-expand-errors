@@ -1,5 +1,5 @@
 name:                coqc-expand-errors
-version:             0.0
+version:             0.1
 synopsis:            Run `coqc` and print out colorized Coq error location information
 homepage:            https://www.github.com/antalsz/coq-expand-errors#readme
 license:             BSD3
