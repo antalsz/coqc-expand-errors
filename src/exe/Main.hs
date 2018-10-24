@@ -1,1 +1,1 @@
-module Main (main) where import CoqcExpandErrors
+module Main (main) where import CoqcExpandErrors.CLI

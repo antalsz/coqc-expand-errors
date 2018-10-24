@@ -18,7 +18,18 @@ source-repository head
   location: https://github.com/antalsz/hs-to-coq
 
 library
-  exposed-modules:     CoqcExpandErrors
+  exposed-modules:     CoqcExpandErrors.Util.Common
+                     , CoqcExpandErrors.Util.Num
+                     , CoqcExpandErrors.Util.Megaparsec
+                     , CoqcExpandErrors.Util.Vector
+                     , CoqcExpandErrors.Util.Pipes
+                     , CoqcExpandErrors.Types
+                     , CoqcExpandErrors.Parse.CoqDefinitions
+                     , CoqcExpandErrors.Parse.CoqcErrors
+                     , CoqcExpandErrors.Text.Divvy
+                     , CoqcExpandErrors.Pipes.Report
+                     , CoqcExpandErrors.CoqFile
+                     , CoqcExpandErrors.CLI
 
   other-extensions:    TemplateHaskell
                      , TypeFamilies, FlexibleContexts
