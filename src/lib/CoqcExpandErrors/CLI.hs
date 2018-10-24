@@ -55,7 +55,7 @@ colorOutput = Marker { markerOnLine         = line "\ESC[32;1m" "\ESC[39;22m" '>
     lineTag c def (Line i) = T.pack $ printf "%c %*d:" c (maxLength def) i
     
     maxLength :: Range Line -> Int
-    maxLength def = round (logBase (10 :: Double) . fromIntegral . unLine $ def^.end) + 1
+    maxLength def = ceiling (logBase (10 :: Double) . fromIntegral . (+ 1) . unLine $ def^.end)
 
 -- |Produce the highlighted definition text, and then an extra bold line giving
 -- the definition where it was found with its name in red.
